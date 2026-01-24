@@ -9,9 +9,8 @@ function clean(text = "") {
 }
 
 function isProvinceHeading(text) {
-  const t = text.toLowerCase();
+  const t = clean(text).toLowerCase();
   return (
-    t.includes("province") ||
     t.includes("koshi") ||
     t.includes("madhesh") ||
     t.includes("bagmati") ||
@@ -26,7 +25,6 @@ function isProvinceHeading(text) {
 function normalizeProvinceName(raw) {
   const s = clean(raw);
   const low = s.toLowerCase();
-
   const map = {
     koshi: "Koshi Province",
     madhesh: "Madhesh Province",
@@ -37,19 +35,79 @@ function normalizeProvinceName(raw) {
     sudurpashchim: "Sudurpashchim Province",
     sudurpaschim: "Sudurpashchim Province",
   };
-
-  // If already contains "Province", keep as is
   if (low.includes("province")) return s;
-
-  for (const k of Object.keys(map)) {
-    if (low.includes(k)) return map[k];
-  }
-
+  for (const k of Object.keys(map)) if (low.includes(k)) return map[k];
   return s;
 }
 
 function hasConstituencyColumn(headers) {
   return headers.some((h) => h.toLowerCase().includes("constituen"));
+}
+
+// Rowspan/colspan-safe-ish parser
+function parseTableWithSpans($, $table) {
+  const rows = $table.find("tr").toArray();
+  const grid = [];
+  const spanMap = new Map(); // "r,c" -> { text, remaining }
+  const key = (r, c) => `${r},${c}`;
+
+  for (let r = 0; r < rows.length; r++) {
+    grid[r] = [];
+    let c = 0;
+    const cells = $(rows[r]).find("th, td").toArray();
+
+    const fillActive = () => {
+      while (spanMap.has(key(r, c))) {
+        const s = spanMap.get(key(r, c));
+        grid[r][c] = s.text;
+        if (s.remaining > 1) {
+          spanMap.set(key(r + 1, c), { text: s.text, remaining: s.remaining - 1 });
+        }
+        spanMap.delete(key(r, c));
+        c++;
+      }
+    };
+
+    for (const cell of cells) {
+      fillActive();
+      const $cell = $(cell);
+      const text = clean($cell.text());
+      const rowspan = parseInt($cell.attr("rowspan") || "1", 10);
+      const colspan = parseInt($cell.attr("colspan") || "1", 10);
+
+      for (let k = 0; k < colspan; k++) {
+        grid[r][c + k] = text;
+        if (rowspan > 1) {
+          spanMap.set(key(r + 1, c + k), { text, remaining: rowspan - 1 });
+        }
+      }
+      c += colspan;
+    }
+    fillActive();
+  }
+
+  const headers = (grid[0] || []).map((x) => clean(x || "")).filter(Boolean);
+  if (!headers.length) return { headers: [], data: [] };
+
+  const data = [];
+  for (let i = 1; i < grid.length; i++) {
+    const row = grid[i] || [];
+    if (!row.some((v) => clean(v || ""))) continue;
+
+    const obj = {};
+    for (let j = 0; j < headers.length; j++) obj[headers[j]] = clean(row[j] || "");
+    data.push(obj);
+  }
+  return { headers, data };
+}
+
+function findHeadingByExactText($, selector, exactLowerText) {
+  const els = $(selector).toArray();
+  for (const el of els) {
+    const t = clean($(el).text()).toLowerCase();
+    if (t === exactLowerText) return $(el);
+  }
+  return null;
 }
 
 async function main() {
@@ -61,19 +119,30 @@ async function main() {
   const html = await res.text();
   const $ = load(html);
 
-  const anchor = $("#Candidates_by_Province");
-  console.log(
-    "Debug:",
-    "anchorFound=", anchor.length > 0,
-    "tables=", $("table").length,
-    "wikitables=", $("table.wikitable").length
-  );
+  console.log("Debug:", "tables=", $("table").length, "wikitables=", $("table.wikitable").length);
 
-  if (!anchor.length) throw new Error("Candidates_by_Province anchor not found.");
+  const startHeading = findHeadingByExactText($, "h2, h3, h4, h5", "candidates by province");
+  console.log("Debug:", "startHeadingFound=", Boolean(startHeading && startHeading.length));
+  if (!startHeading || !startHeading.length) throw new Error("Candidates by Province heading not found.");
 
-  // Start from the closest heading OR parent
-  let start = anchor.closest("h2, h3, h4, h5");
-  if (!start.length) start = anchor.parent();
+  // ✅ Robust walk: use the main content container and iterate through its direct children.
+  // In action=render, everything important is usually inside .mw-parser-output.
+  const $root = $(".mw-parser-output").first();
+  console.log("Debug:", "mwParserOutputFound=", $root.length > 0, "rootChildren=", $root.children().length);
+
+  if (!$root.length) throw new Error(".mw-parser-output not found. Page structure changed.");
+
+  const rootChildren = $root.children().toArray();
+
+  // Find the index of the child that CONTAINS the heading (heading might be nested)
+  const headingEl = startHeading.get(0);
+  const startIdx = rootChildren.findIndex((child) => child === headingEl || $(child).find(headingEl).length > 0);
+  console.log("Debug:", "startIdxInRootChildren=", startIdx);
+
+  if (startIdx < 0) {
+    // fallback: just scan all children looking for the text
+    throw new Error("Could not locate Candidates by Province heading inside .mw-parser-output children.");
+  }
 
   const result = {
     source: "https://en.wikipedia.org/wiki/2026_Nepalese_general_election#Candidates_by_Province",
@@ -85,70 +154,38 @@ async function main() {
   let parsedTables = 0;
   let tablesWithConstituency = 0;
 
-  // Walk forward in DOM order
-  const nodes = start.nextAll().toArray();
+  // Iterate AFTER the heading-containing block
+  for (let i = startIdx + 1; i < rootChildren.length; i++) {
+    const $node = $(rootChildren[i]);
 
-  for (const node of nodes) {
-    const $node = $(node);
+    // Stop at next major section
+    if ($node.is("h2")) break;
 
-    // Stop when we hit a new major section that isn't province-related
-    // (Wikipedia render pages sometimes use h2/h3 for new sections)
-    if ($node.is("h2, h3")) {
-      const title = clean($node.find(".mw-headline").text() || $node.text());
-      if (title && !isProvinceHeading(title) && title.toLowerCase().includes("candidates") === false) {
-        // We've reached a new section after Candidates-by-Province
-        // (safe stop to avoid parsing unrelated tables)
-        break;
-      }
-    }
-
-    // Province headings can be h3/h4/h5
+    // Province headings
     if ($node.is("h3, h4, h5")) {
-      const title = clean($node.find(".mw-headline").text() || $node.text());
-      if (title && isProvinceHeading(title)) {
-        currentProvince = normalizeProvinceName(title);
-      }
+      const title = clean($node.text());
+      if (isProvinceHeading(title)) currentProvince = normalizeProvinceName(title);
       continue;
     }
 
-    // Parse tables under the last province heading
-    if ($node.is("table")) {
-      const rows = $node.find("tr").toArray();
-      if (rows.length < 2) continue;
+    // Sometimes headings are inside wrappers (div, table caption blocks etc.)
+    // So also check if this block contains a province heading as a descendant.
+    const descendantHeadings = $node.find("h3, h4, h5").toArray();
+    for (const h of descendantHeadings) {
+      const title = clean($(h).text());
+      if (isProvinceHeading(title)) currentProvince = normalizeProvinceName(title);
+    }
 
-      const headers = $(rows[0])
-        .find("th, td")
-        .toArray()
-        .map((c) => clean($(c).text()))
-        .filter(Boolean);
+    // Tables can also be nested. Parse any table(s) inside this block.
+    const tables = $node.is("table") ? [$node] : $node.find("table").toArray().map((t) => $(t));
+    for (const $table of tables) {
+      if (!currentProvince) continue;
 
+      const { headers, data } = parseTableWithSpans($, $table);
       if (!headers.length) continue;
       if (!hasConstituencyColumn(headers)) continue;
 
       tablesWithConstituency++;
-
-      if (!currentProvince) {
-        // If table appears before we detect province heading, skip
-        continue;
-      }
-
-      const data = [];
-      for (let i = 1; i < rows.length; i++) {
-        const cells = $(rows[i])
-          .find("th, td")
-          .toArray()
-          .map((c) => clean($(c).text()));
-
-        if (!cells.length) continue;
-
-        const obj = {};
-        headers.forEach((h, idx) => {
-          obj[h] = cells[idx] || "";
-        });
-
-        data.push(obj);
-      }
-
       if (!result.provinces[currentProvince]) result.provinces[currentProvince] = [];
       result.provinces[currentProvince].push(...data);
       parsedTables++;
@@ -166,20 +203,13 @@ async function main() {
   console.log("Total rows:", totalRows);
   console.log("Debug: tablesWithConstituency=", tablesWithConstituency, "parsedTables=", parsedTables);
 
-  // If still empty, print the first few headings after the anchor for diagnosis
   if (provinces.length === 0) {
-    console.log("⚠️ Provinces still empty. Printing next headings for diagnosis:");
-    let printed = 0;
-    for (const node of nodes) {
-      const $node = $(node);
-      if ($node.is("h2, h3, h4, h5")) {
-        const title = clean($node.find(".mw-headline").text() || $node.text());
-        if (title) {
-          console.log("Heading:", title);
-          printed++;
-          if (printed >= 12) break;
-        }
-      }
+    console.log("⚠️ Still empty. Quick peek after heading (next 25 root blocks):");
+    for (let k = startIdx + 1; k < Math.min(rootChildren.length, startIdx + 26); k++) {
+      const $n = $(rootChildren[k]);
+      const tag = $n.get(0)?.tagName;
+      const text = clean($n.text()).slice(0, 140);
+      console.log(`${k - startIdx}. <${tag}> ${text}`);
     }
   }
 }

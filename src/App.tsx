@@ -2,216 +2,340 @@ import { useMemo, useState } from "react";
 import MapView from "./components/MapView";
 import candidatesData from "./data/candidates.json";
 import { normalizeDistrictName } from "./utils/normalizeDistrictName";
+import partySymbolsData from "./data/partySymbols.json";
+import NavBar from "./components/NavBar";
+import electionInfoData from "./data/electionInfo.json";
 
-/* ---------------- Types ---------------- */
-
-type ProvinceTableRow = Record<string, string>;
+type Row = Record<string, any>;
 
 type CandidatesJSON = {
   source: string;
   fetchedAt: string;
-  provinces: Record<string, ProvinceTableRow[]>;
+  provinces: Record<string, Row[]>;
 };
 
-type SelectedDistrict = {
-  name: string; // normalized district label used for lookup + UI
+const PARTY_ORDER = [
+  "Congress",
+  "UML",
+  "NCP",
+  "RSP",
+  "RPP",
+  "PSP-N",
+  "Janamat",
+  "UNP",
+  "Others",
+];
+
+type PartySymbolsJSON = {
+  source: string;
+  fetchedAt: string;
+  symbols: Record<string, string>;
 };
 
-/* ---------------- Helpers ---------------- */
+// Map your candidates.json column keys -> partySymbols.json keys
+const PARTY_KEY_TO_FULLNAME: Record<string, string> = {
+  Congress: "Nepali Congress",
+  UML: "CPN (UML)",
+  NCP: "Nepali Communist Party",
+  RSP: "Rastriya Swatantra Party",
+  RPP: "Rastriya Prajatantra Party",
+  "PSP-N": "People's Socialist Party, Nepal",
+  Janamat: "Janamat Party",
+  UNP: "Ujyaalo",
+  Others: "", // no symbol
+};
 
-/** Find a column key in a row by regex (case-insensitive), returns the actual key. */
-function findColumnKey(row: ProvinceTableRow, pattern: RegExp): string | null {
-  for (const k of Object.keys(row)) {
-    if (pattern.test(k)) return k;
-  }
-  return null;
+function getPartySymbolPath(partyKey: string): string | null {
+  const symbols = (partySymbolsData as PartySymbolsJSON).symbols || {};
+  const full = PARTY_KEY_TO_FULLNAME[partyKey] ?? partyKey;
+  if (!full) return null;
+
+  return symbols[full] ?? null;
 }
+
 
 /**
- * Given a constituency string like:
- * "Jhapa 1", "Jhapa–1", "Jhapa-1", "Eastern Rukum 1"
- * returns the district portion: "Jhapa", "Eastern Rukum"
+ * Map GeoJSON district names -> the district label we use in candidates.json lookup.
+ * Add more entries as you discover mismatches (this is normal).
  */
-function extractDistrictFromConstituency(constituencyRaw: string): string {
-  const s = (constituencyRaw || "").trim();
-  if (!s) return "";
+const DISTRICT_ALIAS: Record<string, string> = {
+  // Rukum naming mismatch
+  "Rukum East": "Eastern Rukum",
+  "Rukum (East)": "Eastern Rukum",
+  "Rukum-East": "Eastern Rukum",
+  "Rukum East District": "Eastern Rukum",
+  "Eastern Rukum": "Eastern Rukum",
 
-  // Normalize dash variants (–, —) to "-"
-  const dashNorm = s.replace(/[–—]/g, "-");
+  "Rukum West": "Western Rukum",
+  "Rukum (West)": "Western Rukum",
+  "Rukum-West": "Western Rukum",
+  "Rukum West District": "Western Rukum",
+  "Western Rukum": "Western Rukum",
 
-  // Common patterns:
-  // 1) "Jhapa 1"
-  // 2) "Jhapa-1"
-  // 3) "Jhapa - 1"
-  // 4) Sometimes weird spacing
-  // Remove trailing separator + number
-  const removed = dashNorm.replace(/\s*[-\s]\s*\d+\s*$/, "").trim();
+  // Nawalparasi / Parasi datasets vary
+  Parasi: "Nawalparasi",
+  "Nawalparasi West": "Nawalparasi",
+  "Nawalparasi (West)": "Nawalparasi",
 
-  // If no change, try removing last token if it's a number
-  if (removed === dashNorm) {
-    const parts = dashNorm.split(/\s+/);
-    const last = parts[parts.length - 1];
-    if (!isNaN(Number(last))) return parts.slice(0, -1).join(" ").trim();
-  }
-
-  return removed;
-}
-
-/* ---------------- App ---------------- */
+  // Keep as-is but included for clarity
+  Nawalpur: "Nawalpur",
+};
 
 export default function App() {
-  const data = candidatesData as unknown as CandidatesJSON;
+  const data = candidatesData as CandidatesJSON;
 
-  const [selected, setSelected] = useState<SelectedDistrict | null>(null);
+  const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
 
-  // Flatten count for debugging (tells you if candidates.json is actually populated)
-  const totalCandidateRows = useMemo(() => {
-    if (!data?.provinces) return 0;
-    return Object.values(data.provinces).reduce((acc, rows) => acc + rows.length, 0);
-  }, [data]);
-
-  /* -----------------------------------------------------------
-     Build an index:
-     district (normalized) -> rows (constituencies + candidates)
-     ----------------------------------------------------------- */
+  // Build district -> candidate rows index (from candidates.json)
   const districtIndex = useMemo(() => {
-    const index = new Map<string, ProvinceTableRow[]>();
+    const idx = new Map<string, Row[]>();
 
-    if (!data?.provinces) return index;
-
-    for (const provinceName of Object.keys(data.provinces)) {
+    for (const provinceName of Object.keys(data.provinces || {})) {
       const rows = data.provinces[provinceName] || [];
 
       for (const row of rows) {
-        // Detect constituency column even if casing changes
-        const constituencyKey =
-          findColumnKey(row, /^constituency$/i) ||
-          findColumnKey(row, /constituency/i);
+        if (!isCandidateRow(row)) continue;
 
-        const constituency = constituencyKey ? (row[constituencyKey] || "").trim() : "";
+        const constituency = String(row.Constituency || "").trim();
         if (!constituency) continue;
 
         const districtRaw = extractDistrictFromConstituency(constituency);
-        const districtNormalized = normalizeDistrictName(districtRaw);
-        const key = districtNormalized.toLowerCase();
+        const districtKey = normalizeDistrictName(districtRaw).toLowerCase();
 
-        if (!index.has(key)) index.set(key, []);
-        index.get(key)!.push({ ...row, Province: provinceName });
+        const cleaned = cleanRowValues(row);
+
+        if (!idx.has(districtKey)) idx.set(districtKey, []);
+        idx.get(districtKey)!.push({ ...cleaned, Province: provinceName });
       }
     }
 
-    return index;
+    // Sort within each district by constituency number
+    for (const [k, arr] of idx.entries()) {
+      arr.sort(
+        (a, b) =>
+          constituencyNumber(a.Constituency) - constituencyNumber(b.Constituency)
+      );
+      idx.set(k, arr);
+    }
+
+    return idx;
   }, [data]);
 
-  /* -----------------------------------------------------------
-     District click handler (toggle)
-     IMPORTANT: normalize here so mismatches don’t happen.
-     ----------------------------------------------------------- */
-  function handleDistrictClick(districtNameFromMap: string) {
-    const normalized = normalizeDistrictName(districtNameFromMap);
+  function normalizeDistrictForLookup(nameFromMap: string): string {
+    const base = normalizeDistrictName(nameFromMap);
 
-    setSelected((prev) => {
-      if (prev?.name.toLowerCase() === normalized.toLowerCase()) return null;
-      return { name: normalized };
-    });
+    // Apply alias map (case-insensitive)
+    const aliasKey = Object.keys(DISTRICT_ALIAS).find(
+      (k) => k.toLowerCase() === base.toLowerCase()
+    );
+    const mapped = aliasKey ? DISTRICT_ALIAS[aliasKey] : base;
+
+    return normalizeDistrictName(mapped);
   }
 
-  const constituencyRows = selected
-    ? districtIndex.get(selected.name.toLowerCase()) ?? []
+  function handleDistrictClick(nameFromMap: string) {
+    const normalized = normalizeDistrictForLookup(nameFromMap);
+
+    // Debug so you can see mismatches immediately
+    // eslint-disable-next-line no-console
+    console.log("Map click:", nameFromMap, "=> lookup:", normalized);
+
+    setSelectedDistrict((prev) =>
+      prev?.toLowerCase() === normalized.toLowerCase() ? null : normalized
+    );
+  }
+
+  const matchedRows = selectedDistrict
+    ? districtIndex.get(selectedDistrict.toLowerCase()) ?? []
     : [];
+
+  const debugNearby = useMemo(() => {
+    if (!selectedDistrict) return [];
+    const key = selectedDistrict.toLowerCase();
+    const all = Array.from(districtIndex.keys());
+
+    const contains = all.filter((k) => k.includes(key) || key.includes(k));
+    return contains.slice(0, 10);
+  }, [selectedDistrict, districtIndex]);
 
   return (
     <div className="map-wrap">
-      <MapView
-        geoJsonUrl="/nepal-districts.geojson"
-        selectedDistrictName={selected?.name ?? null}
-        onDistrictClick={handleDistrictClick}
-      />
+      <NavBar info={electionInfoData as any} />
 
-      {selected && (
-        <div className="popup">
-          <h2>{selected.name}</h2>
+      <div className="main">
+        <MapView
+          geoJsonUrl="/nepal-districts.geojson"
+          selectedDistrictName={selectedDistrict}
+          onDistrictClick={handleDistrictClick}
+        />
 
-          <div className="small">
-            Source: Wikipedia • Updated {new Date(data.fetchedAt).toLocaleString()}
+        {selectedDistrict && (
+          <div className="popup">
+            <h2 style={{ marginBottom: 6 }}>{selectedDistrict}</h2>
+
+            <div className="small">
+              Source: Wikipedia • Updated{" "}
+              {new Date(data.fetchedAt).toLocaleString()}
+            </div>
+
+            <div className="hr" />
+
+            {matchedRows.length === 0 ? (
+              <p className="small">
+                No constituencies found for this district in{" "}
+                <b>src/data/candidates.json</b>.
+                <br />
+                <span className="small">
+                  Debug: normalized = <b>{selectedDistrict}</b>
+                  {debugNearby.length > 0 && (
+                    <>
+                      <br />
+                      Similar keys: {debugNearby.join(", ")}
+                    </>
+                  )}
+                </span>
+              </p>
+            ) : (
+                matchedRows.map((row, i) => {
+                  const parties = detectPartyColumns(row);
+
+                    return (
+                      <div key={i} style={{ marginBottom: 14 }}>
+                        <h3 style={{ marginBottom: 8 }}>
+                      {row.Constituency}
+                      <span className="small"> — {row.Province}</span>
+                    </h3>
+
+                    {parties.map((party) => (
+                      <CandidateRow
+                        key={party}
+                        party={party}
+                        name={String(row[party] ?? "")}
+                      />
+                    ))}
+
+                        <div className="hr" />
+                      </div>
+                    );
+                  })
+            )}
+
+
+            <button className="btn" onClick={() => setSelectedDistrict(null)}>
+              Close
+            </button>
           </div>
-
-          <div className="small" style={{ marginTop: 6 }}>
-            Debug: totalRows={totalCandidateRows}, matchedRows={constituencyRows.length}
-          </div>
-
-          <div className="hr" />
-
-          {totalCandidateRows === 0 ? (
-            <p className="small">
-              Your <b>candidates.json is empty</b> (no rows were loaded).
-              <br />
-              Run: <b>npm run fetch:candidates</b>
-            </p>
-          ) : constituencyRows.length === 0 ? (
-            <p className="small">
-              No constituencies found for this district.
-              <br />
-              This usually means a spelling mismatch between your district GeoJSON and Wikipedia names.
-              <br />
-              Tell me which district you clicked (exact name shown above) and I’ll add it to the mapping.
-            </p>
-          ) : (
-            constituencyRows.map((row, i) => {
-              const constituencyKey =
-                findColumnKey(row, /^constituency$/i) ||
-                findColumnKey(row, /constituency/i) ||
-                "Constituency";
-
-              const constituency = row[constituencyKey] || "(unknown constituency)";
-
-              return (
-                <div key={i} style={{ marginBottom: 14 }}>
-                  <h3 style={{ marginBottom: 8 }}>
-                    {constituency}
-                    <span className="small"> — {row["Province"]}</span>
-                  </h3>
-
-                  <Candidate party="Congress" name={row["Congress"]} />
-                  <Candidate party="UML" name={row["UML"]} />
-                  <Candidate party="NCP" name={row["NCP"]} />
-                  <Candidate party="RSP" name={row["RSP"]} />
-                  <Candidate party="RPP" name={row["RPP"]} />
-
-                  {/* Optional columns */}
-                  <Candidate party="PSP-N" name={row["PSP-N"]} />
-                  <Candidate party="Janamat" name={row["Janamat"]} />
-                  <Candidate party="UNP" name={row["UNP"]} />
-                  <Candidate party="Others" name={row["Others"]} />
-
-                  <div className="hr" />
-                </div>
-              );
-            })
-          )}
-
-          <button className="btn" onClick={() => setSelected(null)}>
-            Close
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
 
-/* ---------------- Candidate Row ---------------- */
+function CandidateRow({ party, name }: { party: string; name: string; }) {
+  const v = sanitizeValue(name);
+  if (!v) return null;
 
-function Candidate(props: { party: string; name?: string }) {
-  const name = (props.name || "").trim();
-  if (!name) return null;
+  const symbolPath = getPartySymbolPath(party);
 
   return (
-    <div style={{ display: "flex", gap: 12, marginBottom: 4, alignItems: "baseline" }}>
-      <div style={{ width: 90, fontWeight: 700 }}>{props.party}</div>
-      <div style={{ flex: 1 }}>{name}</div>
-      <div className="small" style={{ width: 120, textAlign: "right" }}>
-        [logo] [symbol]
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        marginBottom: 4,
+        alignItems: "center",
+      }}
+    >
+      <div style={{ width: 90, fontWeight: 700 }}>{party}</div>
+
+      <div style={{ flex: 1, alignItems: "baseline" }}>{v}</div>
+
+      {/* Symbol column (shifted left, space reserved for votes) */}
+      <div
+        style={{
+          width: 120,
+          textAlign: "left",
+          paddingLeft: 16,
+          paddingRight: 40, // ← future vote count space
+          boxSizing: "border-box",
+        }}
+      >
+        {symbolPath ? (
+          <img
+            src={symbolPath}
+            alt={`${party} symbol`}
+            style={{ height: 26, width: "auto", objectFit: "contain" }}
+            loading="lazy"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = "none";
+            }}
+          />
+        ) : (
+          <span className="small">—</span>
+        )}
       </div>
     </div>
   );
+}
+
+
+
+/* ---------------- Helpers ---------------- */
+
+function isCandidateRow(row: Row): boolean {
+  const c = String(row?.Constituency ?? "").trim();
+  if (!c) return false;
+  if (c.toLowerCase() === "constituency") return false;
+
+  // must end in a number (filters out "Outgoing MP" rows)
+  if (!/\d+\s*$/.test(c)) return false;
+
+  return true;
+}
+
+function extractDistrictFromConstituency(constituency: string): string {
+  return constituency
+    .trim()
+    .replace(/[–—]/g, "-")
+    .replace(/\s*[-\s]\s*\d+\s*$/, "")
+    .trim();
+}
+
+function constituencyNumber(constituency: string): number {
+  const m = String(constituency).match(/(\d+)\s*$/);
+  return m ? Number(m[1]) : 999;
+}
+
+function detectPartyColumns(row: Row): string[] {
+  const keys = Object.keys(row);
+  const present = PARTY_ORDER.filter((p) => keys.includes(p));
+
+  if (present.length === 0) {
+    return keys.filter((k) => k !== "Constituency" && k !== "Province");
+  }
+  return present;
+}
+
+function sanitizeValue(raw: string): string {
+  let s = String(raw || "").trim();
+  if (!s) return "";
+
+  // strip embedded wikipedia css blobs from "Others"
+  if (s.includes(".mw-parser-output")) {
+    const lastBrace = s.lastIndexOf("}");
+    if (lastBrace !== -1) s = s.slice(lastBrace + 1).trim();
+  }
+
+  s = s.replace(/[{};]/g, " ").replace(/\s+/g, " ").trim();
+  if (s === "-" || s === "—") return "";
+  return s;
+}
+
+function cleanRowValues(row: Row): Row {
+  const out: Row = {};
+  for (const k of Object.keys(row)) {
+    const v = row[k];
+    out[k] = typeof v === "string" ? sanitizeValue(v) : v;
+  }
+  return out;
 }

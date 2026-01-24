@@ -1,0 +1,13 @@
+{
+  "source": "https://en.wikipedia.org/wiki/2026_Nepalese_general_election",
+  "fetchedAt": "2026-01-24T00:00:00.000Z",
+  "electionDateAD": "2026-03-05",
+  "registeredVoters": 18903689,
+  "seatsTotal": 275,
+  "seatsFPTP": 165,
+  "seatsPR": 110,
+  "notes": {
+    "votingMethod": "First-past-the-post + Proportional representation",
+    "country": "Nepal"
+  }
+}

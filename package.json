@@ -14,6 +14,7 @@
     "cheerio": "^1.1.2",
     "geojson": "^0.5.0",
     "leaflet": "^1.9.4",
+    "nepali-date-converter": "^3.4.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-leaflet": "^5.0.0",

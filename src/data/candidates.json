@@ -1,5 +1,1751 @@
 {
   "source": "https://en.wikipedia.org/wiki/2026_Nepalese_general_election#Candidates_by_Province",
-  "fetchedAt": "2026-01-23T12:54:48.764Z",
-  "provinces": {}
+  "fetchedAt": "2026-01-24T04:43:33.800Z",
+  "provinces": {
+    "Koshi Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Taplejung 1",
+        "Congress": "Gajendra Tumyahang",
+        "UML": "Kshitij Thebe",
+        "NCP": "Khel Prasad Budhathoki",
+        "RSP": "Birendra Shrestha",
+        "RPP": "Indra Prasad Thapa",
+        "Others": ""
+      },
+      {
+        "Constituency": "Panchthar 1",
+        "Congress": "Narendra Kerung",
+        "UML": "Aiendra Sundar Nembang",
+        "NCP": "Harka Bahadur Nembang",
+        "RSP": "Mahendra Bikram Thamsuhang",
+        "RPP": "Tej Kerumbang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Ilam 1",
+        "Congress": "Niskal Rai",
+        "UML": "Kajiman Kagate",
+        "NCP": "Rana Bahadur Rai",
+        "RSP": "Bimal Gadaal",
+        "RPP": "Jwala Nepal Dahal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Ilam 2",
+        "Congress": "Bhesraj Acharaya",
+        "UML": "Suhang Nembang",
+        "NCP": "Om Bahadur Gurung",
+        "RSP": "Gokul Bahadur Rai",
+        "RPP": "Ganesh Prasad Dulal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jhapa 1",
+        "Congress": "Keshab Raj Pandey",
+        "UML": "Ram Chandra Upreti",
+        "NCP": "Ashesh Ghimire",
+        "RSP": "Nisha Dangi",
+        "RPP": "Hemraj Karki",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jhapa 2",
+        "Congress": "Sarita Prasai",
+        "UML": "Devraj Ghimire",
+        "NCP": "Dharmashila Chapagain",
+        "RSP": "Indira Rana Magar",
+        "RPP": "Swagat Nepal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jhapa 3",
+        "Congress": "Rajendra Ghimire",
+        "UML": "Harilal Rajbanshi",
+        "NCP": "Dilli Ghimire",
+        "RSP": "Prakash Pathak",
+        "RPP": "Rajendra Prasad Lingden",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jhapa 4",
+        "Congress": "Deuman Thebe",
+        "UML": "L.P. Sawa Limbu",
+        "NCP": "Purushottam Chudel",
+        "RSP": "Shambhu Suskera",
+        "RPP": "Bhakti Prasad Sitaula",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jhapa 5",
+        "Congress": "Mandhara Chimariya",
+        "UML": "K.P. Sharma Oli",
+        "NCP": "Ranjit Tamang",
+        "RSP": "Balendra Shah",
+        "RPP": "Laxmi Prasad Sangraula",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sankhuwasabha 1",
+        "Congress": "Dipan Shrestha",
+        "UML": "Arjun Karki",
+        "NCP": "Sarita Khadka Thapa",
+        "RSP": "Mingma Sherpa",
+        "RPP": "Haridev Shrestha",
+        "Others": ""
+      },
+      {
+        "Constituency": "Tehrathum 1",
+        "Congress": "Santosh Subba",
+        "UML": "Bhanubhakta Dhakal",
+        "NCP": "Ranadhoj Kandangwa",
+        "RSP": "Surendra Karki",
+        "RPP": "Hom Bhakta Kerumbang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bhojpur 1",
+        "Congress": "Balkrishna Thapa",
+        "UML": "Sherdhan Rai",
+        "NCP": "Ajambar Kangmang Rai",
+        "RSP": "Ramesh Prasad Ojha",
+        "RPP": "Janak Nepal",
+        "Others": ".mw-parser-output .legend{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .legend-color{display:inline-block;min-width:1.25em;height:1.25em;line-height:1.25;margin:1px 0;text-align:center;border:1px solid black;background-color:transparent;color:black}.mw-parser-output .legend-text{} Dhurba Rai (SSP)"
+      },
+      {
+        "Constituency": "Dhankuta 1",
+        "Congress": "Dinesh Rai",
+        "UML": "Rajendra Kumar Rai",
+        "NCP": "Dharma Prasad Paudel",
+        "RSP": "Dinesh Bhandari",
+        "RPP": "Vibhatsu Thapa",
+        "Others": ""
+      },
+      {
+        "Constituency": "Morang 1",
+        "Congress": "Khadga Bahadur Phago",
+        "UML": "Ghanashyam Khatiwada",
+        "NCP": "Kulprasad Samba",
+        "RSP": "Yagyamani Neupane",
+        "RPP": "Purna Bahadur Waiba",
+        "Others": ""
+      },
+      {
+        "Constituency": "Morang 2",
+        "Congress": "Minendra Rijal",
+        "UML": "Dilip Kumar Bagediya",
+        "NCP": "Chandrabir Rai",
+        "RSP": "Krishna Kumar Karki",
+        "RPP": "Bansaraj Rajbanshi",
+        "Others": "Manoj Kumar Rajbanshi (RUPN)"
+      },
+      {
+        "Constituency": "Morang 3",
+        "Congress": "Sunil Kumar Sharma",
+        "UML": "Iran Kumar Rai",
+        "NCP": "Devman Sambahamphe",
+        "RSP": "Ganesh Karki",
+        "RPP": "Prem Subedi",
+        "Others": "Bhuwan Kumar Wagle (RUPN)"
+      },
+      {
+        "Constituency": "Morang 4",
+        "Congress": "Gururaj Ghimire",
+        "UML": "Jeevan Ghimire",
+        "NCP": "Amanlal Modi",
+        "RSP": "Santosh Rajbanshi",
+        "RPP": "Madhav Acharya",
+        "Others": ""
+      },
+      {
+        "Constituency": "Morang 5",
+        "Congress": "Phool Kumar Lalbani",
+        "UML": "Manoj Agrawal",
+        "NCP": "Shiva Kumar Mandal",
+        "RSP": "Aasha Jha",
+        "RPP": "Kumud Raya",
+        "Others": "Yogendra Mandal (RUPN) Raj Kumar Yadav (PSP-N)"
+      },
+      {
+        "Constituency": "Morang 6",
+        "Congress": "Shekhar Koirala",
+        "UML": "Binod Dhakal",
+        "NCP": "Opendra Kumar Raya",
+        "RSP": "Rubina Acharya",
+        "RPP": "Sabin Niraula",
+        "Others": "Mohammad Jaabir (PSP-N)"
+      },
+      {
+        "Constituency": "Sunsari 1",
+        "Congress": "Sujendra Tamang",
+        "UML": "Tikaram Limbu",
+        "NCP": "Surya Bahadur Bhattarai",
+        "RSP": "Sarin Tamang(Goma)",
+        "RPP": "Uddhav Shrestha",
+        "Others": "Harka Sampang (SSP) Sanjay Rai (PSP-N) Nagendra Bahadur Limbu (PSP)"
+      },
+      {
+        "Constituency": "Sunsari 2",
+        "Congress": "Rajiv Koirala",
+        "UML": "Rewati Raman Bhandari",
+        "NCP": "Ram Kumari Chaudhahry",
+        "RSP": "",
+        "RPP": "Dinesh Kumar Basnet",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sunsari 3",
+        "Congress": "Bijay Kumar Gachhadar",
+        "UML": "Bhagwati Chaudhary",
+        "NCP": "Durgesh Chaudhary",
+        "RSP": "Ashok Chaudhary",
+        "RPP": "Ghanashyam Gurung",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sunsari 4",
+        "Congress": "Gyanendra Bahadur Karki",
+        "UML": "Jagadish Kushiyat",
+        "NCP": "Mohammad Mehfooz Ansari",
+        "RSP": "Dipak Kumar Sah",
+        "RPP": "Prem Prasad Bhattarai",
+        "Others": ""
+      },
+      {
+        "Constituency": "Solukhumbu 1",
+        "Congress": "Prakash Singh Karki",
+        "UML": "Kalpana Rai",
+        "NCP": "Asim Rai",
+        "RSP": "Rishidhan Rai",
+        "RPP": "Rajendra Basnet",
+        "Others": ""
+      },
+      {
+        "Constituency": "Khotang 1",
+        "Congress": "Birbal Kaji Rai",
+        "UML": "Devbikram Rai",
+        "NCP": "Hari Roka",
+        "RSP": "Rudhra Giri",
+        "RPP": "Dipak Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Okhaldhunga 1",
+        "Congress": "Kumar Luitel",
+        "UML": "Asmita Thapa",
+        "NCP": "Ambir Babu Gurung",
+        "RSP": "Bisworaj Pokharel",
+        "RPP": "Dik Prasad Bastola",
+        "Others": ""
+      },
+      {
+        "Constituency": "Udayapur 1",
+        "Congress": "Bidur Basnet",
+        "UML": "Durga Kumar Thapa",
+        "NCP": "Baldev Chaudhary",
+        "RSP": "Parash Gelal",
+        "RPP": "Subhas Chandra Khadka",
+        "Others": "Devraj Roka (Ind)"
+      },
+      {
+        "Constituency": "Udayapur 2",
+        "Congress": "Ram Kumar Rai",
+        "UML": "Ambar Rayamajhi",
+        "NCP": "Suresh Kumar Rai",
+        "RSP": "Surya Bahadur Tamang",
+        "RPP": "Bishnu Bahadur Khadka",
+        "Others": "Major Rail (Ind)"
+      }
+    ],
+    "Madhesh Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "PSP-N": "",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Saptari 1",
+        "Congress": "Ramdev Sah",
+        "UML": "Suman Pyakurel",
+        "NCP": "Rabindra Chaudhary",
+        "RSP": "Pushpa Chaudhary",
+        "RPP": "Sanyajit Kumar Jha",
+        "PSP-N": "Shyam Sardar",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Saptari 2",
+        "Congress": "Ram Kumar Yadav",
+        "UML": "Ziya Ulhaq Ansari",
+        "NCP": "Suryanath Prasad Yadav",
+        "RSP": "Ramji Yadav",
+        "RPP": "Ajay Kumar Das",
+        "PSP-N": "Umesh Kumar Yadav",
+        "Janamat": "CK Raut",
+        "Others": "Satish Kumar Singh (SwaP) Anish Ansari (Mukti)"
+      },
+      {
+        "Constituency": "Saptari 3",
+        "Congress": "Dinesh Kumar Yadav",
+        "UML": "Tarakanta Chaudhary",
+        "NCP": "Arun Kumar Sah",
+        "RSP": "Umakanta Chaudhary",
+        "RPP": "Umdeshwar Sah",
+        "PSP-N": "Upendra Yadav",
+        "Janamat": "Surendra Sharma",
+        "Others": ""
+      },
+      {
+        "Constituency": "Saptari 4",
+        "Congress": "Tejulal Chaudhary",
+        "UML": "Ganga Prasad Chaudhari",
+        "NCP": "Rubi Kumari Karna",
+        "RSP": "Sitaram Shah",
+        "RPP": "Rup Kumar Neupane",
+        "PSP-N": "Bobby Singh",
+        "Janamat": "Jitendra Kumar Sah",
+        "Others": ""
+      },
+      {
+        "Constituency": "Siraha 1",
+        "Congress": "Ramsundar Chaudhary",
+        "UML": "Kedarnath Yadav",
+        "NCP": "Ramchandra Yadav",
+        "RSP": "Bablu Gupta",
+        "RPP": "Basudev Sah",
+        "PSP-N": "Satyanarayan Yadav",
+        "Janamat": "Ramswaroop Chaudhary",
+        "Others": ""
+      },
+      {
+        "Constituency": "Siraha 2",
+        "Congress": "Ram Chandra Yadav",
+        "UML": "Nabin Kumar Yadav",
+        "NCP": "Mukti Singh",
+        "RSP": "Shivasankar Yadav",
+        "RPP": "Shyamkishor Sah Haluwai",
+        "PSP-N": "Sanjiv Yadav",
+        "Janamat": "Binod Yadav",
+        "Others": ""
+      },
+      {
+        "Constituency": "Siraha 3",
+        "Congress": "Subhash Chandra Yadav",
+        "UML": "Lilanath Shrestha",
+        "NCP": "Bishwonath Sah",
+        "RSP": "Dr Sambhu Yadav",
+        "RPP": "Devdayal Singh",
+        "PSP-N": "Asheshwar Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Siraha 4",
+        "Congress": "Chandrakala Kumari Yadav",
+        "UML": "Biltu Sah",
+        "NCP": "Ajay Shankar Nayak",
+        "RSP": "Tapeshwor Yadav",
+        "RPP": "Shubendra Kumar Sah",
+        "PSP-N": "Rajkishor Yadav",
+        "Janamat": "Birendra Prasad Mahato",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dhanusha 1",
+        "Congress": "Ram Paltan Sah",
+        "UML": "Ramchandra Mandal",
+        "NCP": "Matrika Prasad Yadav",
+        "RSP": "Kishori Shah",
+        "RPP": "Manoj Malla Thakuri",
+        "PSP-N": "Deepak Karki",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dhanusha 2",
+        "Congress": "Dinesh Parshaila",
+        "UML": "Umashankar Argariya",
+        "NCP": "Ram Chandra Jha",
+        "RSP": "Rambinod Shah",
+        "RPP": "Viheshwar Mandal",
+        "PSP-N": "Pashupati Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dhanusha 3",
+        "Congress": "Bimalendra Nidhi",
+        "UML": "Julie Kumari Mahato",
+        "NCP": "Ram Lalit Mandal",
+        "RSP": "Manish Jha",
+        "RPP": "Huseni Kabadi",
+        "PSP-N": "Parmeshwar Sah Sudi",
+        "Janamat": "",
+        "Others": "Rajeev Jha (Mukti) Diwakar Sah (Ind)"
+      },
+      {
+        "Constituency": "Dhanusha 4",
+        "Congress": "Mahendra Yadav",
+        "UML": "Raghubir Mahaseth",
+        "NCP": "Sanjay Kumar Mahato",
+        "RSP": "Raj Kishor Mahato",
+        "RPP": "Rambabu Sah",
+        "PSP-N": "Krishna Chandra Sah",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Mahottari 1",
+        "Congress": "Mukesh Raj Kafle",
+        "UML": "Laxmi Mahato Koiri",
+        "NCP": "Girirajmani Pokharel",
+        "RSP": "Pramod Mahato",
+        "RPP": "Yanikhar Gautam",
+        "PSP-N": "Yognarayan Mahato",
+        "Janamat": "",
+        "Others": "Bijay Pokharel (Ind)"
+      },
+      {
+        "Constituency": "Mahottari 2",
+        "Congress": "Kiran Yadav",
+        "UML": "Ram Parikshyan Yadav",
+        "NCP": "Laxman Yadav",
+        "RSP": "Dipak Shah",
+        "RPP": "Ramlakhan Sah",
+        "PSP-N": "Sharat Singh Bhandari",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Mahottari 3",
+        "Congress": "Bajarang Nepali",
+        "UML": "Manoj Kumar Singh",
+        "NCP": "Rajkishor Sah Sudi",
+        "RSP": "Ujjwal Jha",
+        "RPP": "Rajeshwar Ray Yadav",
+        "PSP-N": "Minakshi Jha",
+        "Janamat": "",
+        "Others": "Mohammad Rizwan Ansari (NFSP) Hari Narayan Yadav (Ind) Ramaadhaar Kaapar (Ind)"
+      },
+      {
+        "Constituency": "Mahottari 4",
+        "Congress": "Mahendra Kumar Raya",
+        "UML": "Nilam Adhikari",
+        "NCP": "Bharat Prasad Sah",
+        "RSP": "Gauri Kumari Yadav",
+        "RPP": "Sunil Kumar Singh",
+        "PSP-N": "Surendra Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sarlahi 1",
+        "Congress": "Sambhulal Shrestha",
+        "UML": "Manoj Devkota",
+        "NCP": "Pramod Sah",
+        "RSP": "Nimita Karki",
+        "RPP": "Suryanarayan Yadav",
+        "PSP-N": "Ram Prakash Chaudhary",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sarlahi 2",
+        "Congress": "Saroj Kumar Yadav",
+        "UML": "Dharmendra Ray",
+        "NCP": "Mahindra Ray Yadav",
+        "RSP": "Rabin Mahato",
+        "RPP": "Rajkishor Ray Yadav",
+        "PSP-N": "Bharat Chaudhary",
+        "Janamat": "",
+        "Others": "Rajendra Mahato (Mukti)"
+      },
+      {
+        "Constituency": "Sarlahi 3",
+        "Congress": "Binod Khanal",
+        "UML": "Hari Prasad Upreti",
+        "NCP": "Narayan Kaji Shrestha",
+        "RSP": "Narendra Shah Kalwar",
+        "RPP": "Dholaram Barakoti",
+        "PSP-N": "J.P. Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sarlahi 4",
+        "Congress": "Gagan Thapa",
+        "UML": "Rabi Singh Kushwaha",
+        "NCP": "Ragnish Raya Yadav",
+        "RSP": "Amresh Kumar Singh",
+        "RPP": "Pradeep Jha",
+        "PSP-N": "Rameshwar Ray Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rautahat 1",
+        "Congress": "Anil Kumar Jha",
+        "UML": "Ajay Kumar Gupta",
+        "NCP": "Madhav Kumar Nepal",
+        "RSP": "Rajesh Chaudhary",
+        "RPP": "Shreeram Sah",
+        "PSP-N": "Yogendra Ray Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rautahat 2",
+        "Congress": "Firdosh Alam",
+        "UML": "Shailendra Sah",
+        "NCP": "Kiran Kumar Sah",
+        "RSP": "Sheikh Sagir",
+        "RPP": "Ravindra Prasad Sah",
+        "PSP-N": "Ram Aashish Ray Yadav",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rautahat 3",
+        "Congress": "Ram Kripal Yadav",
+        "UML": "Kundan Prasad Kushwaha",
+        "NCP": "Punam Devi",
+        "RSP": "Dhiraj Patel",
+        "RPP": "Sikindra Prasad Sah",
+        "PSP-N": "",
+        "Janamat": "",
+        "Others": "Prabhu Sah (AJP)"
+      },
+      {
+        "Constituency": "Rautahat 4",
+        "Congress": "Dev Prasad Timilsena",
+        "UML": "Ramji Sah",
+        "NCP": "Ram Kumar Bhattarai",
+        "RSP": "Ganesh Paudel",
+        "RPP": "Bahadur Yadav",
+        "PSP-N": "",
+        "Janamat": "Ram Kalyan Raut",
+        "Others": "Rishi Dhamala (AJP)"
+      },
+      {
+        "Constituency": "Bara 1",
+        "Congress": "Shambhu Budhathoki",
+        "UML": "Achyut Prasad Mainali",
+        "NCP": "Santosh Dhungel",
+        "RSP": "Ganesh Dhimal",
+        "RPP": "Laxmi Sah Kalwar",
+        "PSP-N": "",
+        "Janamat": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bara 2",
+        "Congress": "Bhaiyaram Yadav",
+        "UML": "Balbir Prasad Chaudhary",
+        "NCP": "Ramesh Prasad Yadav",
+        "RSP": "Chandan Singh",
+        "RPP": "Lal Bahadur Prasad Teli",
+        "PSP-N": "",
+        "Janamat": "",
+        "Others": "Aatmaram Sah (AJP)"
+      },
+      {
+        "Constituency": "Bara 3",
+        "Congress": "Farmullah Mansoor",
+        "UML": "Jwala Kumari Sah",
+        "NCP": "Bharat Prasad Sah",
+        "RSP": "Arbinda Shah",
+        "RPP": "Rajendra Prasad Jaiswal",
+        "PSP-N": "Rambabu Kumar Yadav",
+        "Janamat": "Pramod Gupta",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bara 4",
+        "Congress": "Shyambabu Gupta",
+        "UML": "Krishna Kumar Shrestha",
+        "NCP": "Ajay Kushwaha",
+        "RSP": "Rahabar Ansari",
+        "RPP": "Dileep Kumar Sharma Nepal",
+        "PSP-N": "",
+        "Janamat": "",
+        "Others": "Sarbendra Khanal (SNP)"
+      },
+      {
+        "Constituency": "Parsa 1",
+        "Congress": "Anil Kumar Rungata",
+        "UML": "Pradeep Yadav",
+        "NCP": "Ajay Chaurasiya",
+        "RSP": "Hari Panta",
+        "RPP": "Nandakishor Prasad Shreewastav",
+        "PSP-N": "Ramnaresh Yadav",
+        "Janamat": "Omprakash Sarraf",
+        "Others": ""
+      },
+      {
+        "Constituency": "Parsa 2",
+        "Congress": "Ajay Chaurasiya",
+        "UML": "Rima Kumari Yadav",
+        "NCP": "Manoj Chaudhary",
+        "RSP": "Sushil Patel",
+        "RPP": "Bina Jaiswal",
+        "PSP-N": "Ashok Temani",
+        "Janamat": "Shyam Gupta",
+        "Others": ""
+      },
+      {
+        "Constituency": "Parsa 3",
+        "Congress": "Surendra Prasad Chaudhary",
+        "UML": "Rupesh Pandey",
+        "NCP": "Chhotelal Yadav",
+        "RSP": "Ramakanta Chaurasiya",
+        "RPP": "Nabin Kumar Singh",
+        "PSP-N": "",
+        "Janamat": "Malti Kushwaha",
+        "Others": ""
+      },
+      {
+        "Constituency": "Parsa 4",
+        "Congress": "Ramesh Rijal",
+        "UML": "Zalim Miya Ansari",
+        "NCP": "Jay Prakash Tharu",
+        "RSP": "Tek Bahadur Shakya",
+        "RPP": "Shanta Kumar Joshi",
+        "PSP-N": "Kripa Sindhu Chaudhary",
+        "Janamat": "",
+        "Others": ""
+      }
+    ],
+    "Bagmati Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "UNP": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dolakha 1",
+        "Congress": "Ajaya Babu Shiwakoti",
+        "UML": "Parbat Gurung",
+        "NCP": "Bishal Khadka",
+        "RSP": "Jagdish Kharel",
+        "RPP": "Prabin Kumar Thokar Tamang",
+        "UNP": "-",
+        "Others": ""
+      },
+      {
+        "Constituency": "Ramechhap 1",
+        "Congress": "Ramchandra Khadka",
+        "UML": "Madhav Prasad Dhungel",
+        "NCP": "Shyam Kumar Shrestha",
+        "RSP": "Krishnahari Budhathoki",
+        "RPP": "Gore Bahadur Tamang",
+        "UNP": "Deep Bahadur Yonjan",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sindhuli 1",
+        "Congress": "Ujjwal Baral",
+        "UML": "Pradeep K.C.",
+        "NCP": "Dekendra Subedi",
+        "RSP": "Dhanendra Karki",
+        "RPP": "Ramnarayan Adhikari Danuwar",
+        "UNP": "Motilal Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sindhuli 2",
+        "Congress": "Sushila Thing",
+        "UML": "Manoj Jung Thapa",
+        "NCP": "Lekhnath Dahal",
+        "RSP": "Asish Gajurel",
+        "RPP": "Mukunda Prasad Gajurel",
+        "UNP": "-",
+        "Others": "Maheshwar Dahal (Ind)"
+      },
+      {
+        "Constituency": "Rasuwa 1",
+        "Congress": "Mohan Acharya",
+        "UML": "Prem Bahadur Tamang",
+        "NCP": "Madhav Lamichhane",
+        "RSP": "Basanta Bhatta",
+        "RPP": "Hariprasad Ghimire",
+        "UNP": "Man Bahadur Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dhading 1",
+        "Congress": "Krishna Rijal",
+        "UML": "Bhumi Tripathi",
+        "NCP": "Rajendra Prasad Pandey",
+        "RSP": "Ashika Tamang",
+        "RPP": "Geeta Prasad Acharya",
+        "UNP": "Shyamraja Pandey",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dhading 2",
+        "Congress": "Ramesh Prasad Dhamala",
+        "UML": "Dhan Bahadur Ghale",
+        "NCP": "Ram Bahadur Bhandari",
+        "RSP": "Bodh Narayan Shrestha",
+        "RPP": "Suresh Rijal",
+        "UNP": "Amir Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Nuwakot 1",
+        "Congress": "Prakash Sharan Mahat",
+        "UML": "Badri Mainali",
+        "NCP": "Hit Bahadur Tamang",
+        "RSP": "Bikram Timilsina",
+        "RPP": "Bima Thapa",
+        "UNP": "Amit Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Nuwakot 2",
+        "Congress": "Jagdishwor Narsingh K.C.",
+        "UML": "Keshavraj Pandey",
+        "NCP": "Harinath Khatiwada",
+        "RSP": "Achyutam Lamichhane",
+        "RPP": "Jhanak Pyakurel",
+        "UNP": "Gyandendra Prakash Ghale",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 1",
+        "Congress": "Prawal Thapa",
+        "UML": "Mohan Regmi",
+        "NCP": "Menaka Bhandari",
+        "RSP": "Ranju Darshana",
+        "RPP": "Rabindra Mishra",
+        "UNP": "Mangal Lal Shrestha",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 2",
+        "Congress": "Kabir Sharma",
+        "UML": "Maniram Phuyal",
+        "NCP": "Nitesh Paudel",
+        "RSP": "Sunil K.C.",
+        "RPP": "Kuntidevi Pokharel",
+        "UNP": "Pawan Pokhrel",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 3",
+        "Congress": "Ramesh Aryal",
+        "UML": "Rameshwor Phuyal",
+        "NCP": "Niraj Lama",
+        "RSP": "Raju Pandey",
+        "RPP": "Surendra Singh Bohara",
+        "UNP": "Kulman Ghising",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 4",
+        "Congress": "Sachin Timalsina",
+        "UML": "Rajan Bhattarai",
+        "NCP": "Indra Bhusal",
+        "RSP": "Pukar Bam",
+        "RPP": "Surendra Bhandari",
+        "UNP": "Jhanak Bahadur Adhikari",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 5",
+        "Congress": "Pradip Paudel",
+        "UML": "Ishwar Pokhrel",
+        "NCP": "Kalpana Sharma",
+        "RSP": "Sasmit Pokhrel",
+        "RPP": "Kamal Thapa",
+        "UNP": "Shree Ram Gurung",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 6",
+        "Congress": "Krishna Baniya",
+        "UML": "Aman Kumar Maskey",
+        "NCP": "Hemlal Sharma",
+        "RSP": "Shishir Khanal",
+        "RPP": "Uddhavraj Bhetwal",
+        "UNP": "Warish Dharel",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 7",
+        "Congress": "Pramodhari Guragai",
+        "UML": "Prakash Shrestha",
+        "NCP": "Basanta Prasad Manandhar",
+        "RSP": "Ganesh Parajuli",
+        "RPP": "Lal Kumar Lama",
+        "UNP": "Bimala Lama",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 8",
+        "Congress": "Sapana Rajbhandari",
+        "UML": "Rajesh Shakya",
+        "NCP": "Suman Sayami",
+        "RSP": "Biraj Bhakta Shrestha",
+        "RPP": "Nabin Shahi",
+        "UNP": "Rajan Khadgi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 9",
+        "Congress": "Nanu Bastola",
+        "UML": "Ajaykranti Shakya",
+        "NCP": "Radhakrishna Maharjan",
+        "RSP": "Dol Prasad Aryal",
+        "RPP": "Dilip Kumar Karki",
+        "UNP": "Rameshwar Shrestha",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kathmandu 10",
+        "Congress": "Himal Karki",
+        "UML": "Binod Shrestha",
+        "NCP": "Rupa Maharjan",
+        "RSP": "Pradip Bista",
+        "RPP": "Balaram Thapa",
+        "UNP": "Dr. rakesh Neupane",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bhaktapur 1",
+        "Congress": "Kiran Neupane",
+        "UML": "Som Prasad Mishra",
+        "NCP": "Hariram Lawaju",
+        "RSP": "Rukesh Ranjit",
+        "RPP": "Bharat Bahadur Khadka",
+        "UNP": "Ramesh Balla",
+        "Others": "Prem Suwal (NMKP)"
+      },
+      {
+        "Constituency": "Bhaktapur 2",
+        "Congress": "Kabir Rana",
+        "UML": "Mahesh Basnet",
+        "NCP": "Ram Prasad Sapkota",
+        "RSP": "Rajiv Khatri",
+        "RPP": "Bikram Thapa",
+        "UNP": "Jitram Lama",
+        "Others": "Ramesh Baidya (NMKP)"
+      },
+      {
+        "Constituency": "Lalitpur 1",
+        "Congress": "Udaya Shumsher Rana",
+        "UML": "Chetnath Sanjyel",
+        "NCP": "Sunil Maharjan",
+        "RSP": "Buddha Ratna Maharjan",
+        "RPP": "Sajina Karki",
+        "UNP": "Padam Tamang",
+        "Others": ""
+      },
+      {
+        "Constituency": "Lalitpur 2",
+        "Congress": "Prem Krishna Maharjan",
+        "UML": "Prem Bahadur Maharjan",
+        "NCP": "Rajendra Amatya",
+        "RSP": "Jagdish Kharel",
+        "RPP": "Raghubarraj Thapa",
+        "UNP": "Rajaram Tandukar",
+        "Others": ""
+      },
+      {
+        "Constituency": "Lalitpur 3",
+        "Congress": "Jitendra Kumar Shrestha",
+        "UML": "Sandan THapa Magar",
+        "NCP": "Rajkaji Maharjan",
+        "RSP": "Toshima Karki",
+        "RPP": "Sabin Khadka",
+        "UNP": "Ashutosh Bijay Pant",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kavrepalanchok 1",
+        "Congress": "Gunaraj Moktan",
+        "UML": "Amit Lama",
+        "NCP": "Dinanath Gautam",
+        "RSP": "Madhu Kumar Chaulagai",
+        "RPP": "Nabaraj Satyal",
+        "UNP": "Yogendra Lama",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kavrepalanchok 2",
+        "Congress": "Madhu Prasad Acharya",
+        "UML": "Ashok Kumar Byanju",
+        "NCP": "Basundhara Humagain",
+        "RSP": "Badan Kumar Bhandari",
+        "RPP": "Ranjib Shrestha",
+        "UNP": "Jyotsana Sainju",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sindhupalchok 1",
+        "Congress": "Jangabahadur Lama",
+        "UML": "Hom Narayan Shrestha",
+        "NCP": "Madhav Sapkota",
+        "RSP": "Bharat Prasad Parajuli",
+        "RPP": "Rammani Neupane",
+        "UNP": "-",
+        "Others": ""
+      },
+      {
+        "Constituency": "Sindhupalchok 2",
+        "Congress": "Bangshalal Tamang",
+        "UML": "Sher Bahadur Tamang",
+        "NCP": "Yuvaraj Dulal",
+        "RSP": "Ajay Shrestha",
+        "RPP": "Gopikrishna Chaulagain",
+        "UNP": "-",
+        "Others": ""
+      },
+      {
+        "Constituency": "Makwanpur 1",
+        "Congress": "Mahalaxmi Upadhaya",
+        "UML": "Rameshwor Rana",
+        "NCP": "Bijay Gautam",
+        "RSP": "Prakash Gautam",
+        "RPP": "Deepak Bahadur Singh",
+        "UNP": "Surendra Lama",
+        "Others": ""
+      },
+      {
+        "Constituency": "Makwanpur 2",
+        "Congress": "Buddha Lama",
+        "UML": "Mahesh Bartaula",
+        "NCP": "Labasher Bista",
+        "RSP": "Prashant Uprety",
+        "RPP": "Ram Bahadur Thokar",
+        "UNP": "Prabin Kumar Syangtan",
+        "Others": ""
+      },
+      {
+        "Constituency": "Chitwan 1",
+        "Congress": "Rajendra Burlakoti",
+        "UML": "Kamalraj Pathak",
+        "NCP": "Krishna Panta",
+        "RSP": "Hari Dhakal",
+        "RPP": "Balaram Khanal",
+        "UNP": "Dhan Bahadur Gurung",
+        "Others": ""
+      },
+      {
+        "Constituency": "Chitwan 2",
+        "Congress": "Mina Kumari Kharel",
+        "UML": "Asmin Ghimire",
+        "NCP": "Pratap Gurung",
+        "RSP": "Rabi Lamichhane",
+        "RPP": "Jagadish Adhikari",
+        "UNP": "Nikumar Pakhrin",
+        "Others": ""
+      },
+      {
+        "Constituency": "Chitwan 3",
+        "Congress": "Tek Prasad Gurung",
+        "UML": "Shankarraj Thapaliya",
+        "NCP": "Renu Dahal",
+        "RSP": "Sobita Gautam",
+        "RPP": "Dipak Thapa Magar",
+        "UNP": "Dambar Bahadur Tamang",
+        "Others": ""
+      }
+    ],
+    "Gandaki Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Gorkha 1",
+        "Congress": "Prem Kumar Khatri",
+        "UML": "Ramchandra Lamichhane",
+        "NCP": "Hariraj Adhikari",
+        "RSP": "Sudan Gurung",
+        "RPP": "Kedarmani Khanal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Gorkha 2",
+        "Congress": "Prakash Chandra Dawadi",
+        "UML": "Milan Gurung",
+        "NCP": "Lekhnath Neupane",
+        "RSP": "Kabindra Burlakoti",
+        "RPP": "Kul Bahadur Basnet",
+        "Others": ""
+      },
+      {
+        "Constituency": "Manang 1",
+        "Congress": "Tek Bahadur Gurung",
+        "UML": "",
+        "NCP": "Yasodha Subedi Gurung",
+        "RSP": "",
+        "RPP": "",
+        "Others": "Ram Bahadur Ghale (MNO)"
+      },
+      {
+        "Constituency": "Lamjung 1",
+        "Congress": "Gam Prasad Gurung",
+        "UML": "Prithvi Subba Gurung",
+        "NCP": "Hari Jung Tamang",
+        "RSP": "Dharma Raj K.C.",
+        "RPP": "Kebindra Jung Gurung",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kaski 1",
+        "Congress": "Tilak Bahadur Ranabhat",
+        "UML": "Bain Bahadur Chhetri",
+        "NCP": "Ramkaji Gurung",
+        "RSP": "Khadak Raj Paudel",
+        "RPP": "Baburam Thapa",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kaski 2",
+        "Congress": "Madhav Prasad Bastola",
+        "UML": "Rashmi Acharya",
+        "NCP": "Hem Bahadur Thapa",
+        "RSP": "Uttam Paudel",
+        "RPP": "Hemjung Gurung",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kaski 3",
+        "Congress": "Manoj Gurung",
+        "UML": "Damodar Bairagi",
+        "NCP": "Gopak Guru",
+        "RSP": "Bina Gurung",
+        "RPP": "Arjun Khanal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Tanahun 1",
+        "Congress": "Gobinda Bhattarai",
+        "UML": "Bhagwati Neupane",
+        "NCP": "Bidyanath Dhakal",
+        "RSP": "Swarnim Wagle",
+        "RPP": "Abhishek Joshi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Tanahun 2",
+        "Congress": "Shankar Bhandari",
+        "UML": "Kedar Sigdel",
+        "NCP": "Som Bahadur Thapa",
+        "RSP": "Shreeram Neupane",
+        "RPP": "Yam Bahadur Khand",
+        "Others": ""
+      },
+      {
+        "Constituency": "Syangja 1",
+        "Congress": "Bharat Raj Dhakal",
+        "UML": "Min Prasad Gurung",
+        "NCP": "Shailendra Ghimire",
+        "RSP": "Dhananjya Regmi",
+        "RPP": "Hukum Bahadur Rana",
+        "Others": ""
+      },
+      {
+        "Constituency": "Syangja 2",
+        "Congress": "Bhagwat Prakash Malla",
+        "UML": "Khim Bahadur Thapa",
+        "NCP": "Padam Bishwokarma",
+        "RSP": "Jhabilal Dumre",
+        "RPP": "Rabin Pathak",
+        "Others": ""
+      },
+      {
+        "Constituency": "Nawalpur 1",
+        "Congress": "Balkrishna Ghimire",
+        "UML": "Bhagirath Sapkota",
+        "NCP": "Lok Prasad Bhurtel",
+        "RSP": "Rajan Gautam",
+        "RPP": "Dipak Chandra Baskota",
+        "Others": ""
+      },
+      {
+        "Constituency": "Nawalpur 2",
+        "Congress": "Om Bahadur Gharti Magar",
+        "UML": "Tilak Mahat Chhetri",
+        "NCP": "Ganeshman Mahato",
+        "RSP": "Manish Khanal",
+        "RPP": "Run Kumari Mahato",
+        "Others": ""
+      },
+      {
+        "Constituency": "Mustang 1",
+        "Congress": "Yogesh Gauchan Thakali",
+        "UML": "Indradhara Dadu Bista",
+        "NCP": "Mutuk Gurung",
+        "RSP": "Aditya Thakali",
+        "RPP": "Kamala Lalchan",
+        "Others": "Suresh Sherchan (UNP)"
+      },
+      {
+        "Constituency": "Myagdi 1",
+        "Congress": "Karna Bahadur Bhandari",
+        "UML": "Hari Krishna Shrestha",
+        "NCP": "Arjun Thapa",
+        "RSP": "Yubaraj Rokka",
+        "RPP": "Dambar Bahadur Subedi",
+        "Others": "Mahabir Pun (Ind)"
+      },
+      {
+        "Constituency": "Baglung 1",
+        "Congress": "Bhim Shrees Rana",
+        "UML": "Hira Bahadur K.C.",
+        "NCP": "",
+        "RSP": "Sushil Khadka",
+        "RPP": "Kalyan Bikram Acharya",
+        "Others": "Krishna Adhikari (RJM)"
+      },
+      {
+        "Constituency": "Baglung 2",
+        "Congress": "Tekraj Paudel",
+        "UML": "Manju Sharma Chalise",
+        "NCP": "Gyannath Gaire",
+        "RSP": "Som Sharma",
+        "RPP": "Anchal Shahi Thakuri",
+        "Others": ""
+      },
+      {
+        "Constituency": "Parbat 1",
+        "Congress": "Arjun Prasad Joshi",
+        "UML": "Padam Giri",
+        "NCP": "Manahari Sharma",
+        "RSP": "Sagar Bhusal",
+        "RPP": "Durga Bahadur Malla",
+        "Others": ""
+      }
+    ],
+    "Lumbini Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Gulmi 1",
+        "Congress": "Chandrakanta Bhandari",
+        "UML": "Pradeep Gyawali",
+        "NCP": "Sudarshan Baral",
+        "RSP": "Sagar Dhakal",
+        "RPP": "Ajit Kumar Shrestha",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Gulmi 2",
+        "Congress": "Bhuwan Prasad Shrestha",
+        "UML": "Gokarna Bista",
+        "NCP": "Shreeram Mahat",
+        "RSP": "Gobinda Panthi",
+        "RPP": "Janak Sen",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Palpa 1",
+        "Congress": "Sandip Rana",
+        "UML": "Narayan Acharya",
+        "NCP": "Hom Bahadur Sunari",
+        "RSP": "Bimal Panta",
+        "RPP": "Brihaspati Aryal",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Palpa 2",
+        "Congress": "Himal Dutta Shrestha",
+        "UML": "Ram Bahadur Raut",
+        "NCP": "Som Prasad Pandey",
+        "RSP": "Madhav Thapa",
+        "RPP": "Dul Bahadur Kunwar",
+        "PSP-N": "",
+        "Others": "Top Aslami Magar (RJP)"
+      },
+      {
+        "Constituency": "Arghakhanchi 1",
+        "Congress": "Bishnu Prasad Khanal",
+        "UML": "Pitambar Bhusal",
+        "NCP": "Ram Bahadur Chauhan",
+        "RSP": "Hari Prasad Bhusal",
+        "RPP": "Jhabindra Phullel",
+        "PSP-N": "",
+        "Others": "Pashupati Dhakal (RJM)"
+      },
+      {
+        "Constituency": "Nawalparasi 1",
+        "Congress": "Binod Chaudhary",
+        "UML": "Ram Prasad Pandey",
+        "NCP": "Sindhu Jalesha",
+        "RSP": "Bikram Khanal",
+        "RPP": "Nawanit Kumar Mishra",
+        "PSP-N": "Hridayesh Tripathi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Nawalparasi 2",
+        "Congress": "Bharat Thapa",
+        "UML": "Bhagwati Prasad Yadav",
+        "NCP": "Devendra Paudel",
+        "RSP": "Narendra Kumar Gupta",
+        "RPP": "Dhruba Bahadur Pradhan",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rupandehi 1",
+        "Congress": "Hira Bahadur Khatri",
+        "UML": "Dadhiram Neupane",
+        "NCP": "Ghanashyam Yadav",
+        "RSP": "Sunil Lamsal",
+        "RPP": "Prajwal Bohara",
+        "PSP-N": "",
+        "Others": "Umashankar Chaudhary (NUPN)"
+      },
+      {
+        "Constituency": "Rupandehi 2",
+        "Congress": "Chun Prasad Paudel",
+        "UML": "Bishnu Prasad Paudel",
+        "NCP": "Subas Pandey",
+        "RSP": "Sulav Kharel",
+        "RPP": "",
+        "PSP-N": "Dipak Gurung",
+        "Others": "Keshav Bahadur Thapa (RJP)"
+      },
+      {
+        "Constituency": "Rupandehi 3",
+        "Congress": "Sushil Gurung",
+        "UML": "Basudev Ghimire",
+        "NCP": "Faiz Ahmed Khan",
+        "RSP": "Lekh Jung Thapa",
+        "RPP": "Gaurav Bohara",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rupandehi 4",
+        "Congress": "Aasutosh Mishra",
+        "UML": "Pramod Kumar Yadav",
+        "NCP": "Babulal Yadav",
+        "RSP": "Kanhaiya Banaya",
+        "RPP": "Ahmeddhin Khan",
+        "PSP-N": "Sarbendra Nath Shukla",
+        "Others": ""
+      },
+      {
+        "Constituency": "Rupandehi 5",
+        "Congress": "Bharat Kumar Shah",
+        "UML": "Khimlal Bhattarai",
+        "NCP": "Mohammad Wakil Musalman",
+        "RSP": "Tafik Ahamad Khan",
+        "RPP": "Meen Prasad Ghimire",
+        "PSP-N": "",
+        "Others": "Om Prakash Yadav (JP)"
+      },
+      {
+        "Constituency": "Kapilvastu 1",
+        "Congress": "Atahar Kamal Musalman",
+        "UML": "Bishram Chaudhary",
+        "NCP": "Krishna Kunwar",
+        "RSP": "Mohan Acharya",
+        "RPP": "Shatrughan Prasad Chaudhary",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kapilvastu 2",
+        "Congress": "Surendra Raj Acharya",
+        "UML": "Dirghanarayan Pandey",
+        "NCP": "Brijesh Kumar Gupta",
+        "RSP": "Bikram Singh Thapa",
+        "RPP": "Bishnu Prasad Bhandari",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kapilvastu 3",
+        "Congress": "Abhishek Pratap Shah",
+        "UML": "Birendra Kumar Kanodia",
+        "NCP": "Ehsan Ahmed Khan",
+        "RSP": "Prakash Rajauriya",
+        "RPP": "Premshankar Shukla",
+        "PSP-N": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Eastern Rukum 1",
+        "Congress": "Kusum Devi Thapa Magar",
+        "UML": "Lilamani Gautam",
+        "NCP": "Pushpa Kamal Dahal",
+        "RSP": "Lakhan Thapa",
+        "RPP": "Roshandhoj Shah",
+        "PSP-N": "",
+        "Others": "Sandeep Pun (PLP)"
+      },
+      {
+        "Constituency": "Rolpa 1",
+        "Congress": "Sudan Kumar Wali",
+        "UML": "Gokul Gharti Magar",
+        "NCP": "Barsaman Pun",
+        "RSP": "Balaram Thapa",
+        "RPP": "Ammar Bahadur Thapa",
+        "PSP-N": "",
+        "Others": "Chudamani Wali (Maoist)"
+      },
+      {
+        "Constituency": "Pyuthan 1",
+        "Congress": "Gobindaj Prasad Pokharel",
+        "UML": "Surya Bahadur Thapa Chhetri",
+        "NCP": "Krishnadhoj Khadka",
+        "RSP": "Sushant Baudik",
+        "RPP": "Dhaneshwar Pandit",
+        "PSP-N": "",
+        "Others": "Tilak G.C. (RJM)"
+      },
+      {
+        "Constituency": "Dang 1",
+        "Congress": "Yogendra Chaudhary",
+        "UML": "Rewati Raman Sharma",
+        "NCP": "Metmani Chaudhary",
+        "RSP": "Devraj Pathak",
+        "RPP": "Binaya Budhathoki",
+        "PSP-N": "Bharatlal Chaudhary",
+        "Others": "Kul Prasad K.C. (Ind)"
+      },
+      {
+        "Constituency": "Dang 2",
+        "Congress": "Kiran Kishor Ghimire",
+        "UML": "Shankar Pokharel",
+        "NCP": "Nirmal Acharya",
+        "RSP": "Bipin Kumar Acharya",
+        "RPP": "Rhishikesh Pokharel",
+        "PSP-N": "Dundiraj Thapa",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dang 3",
+        "Congress": "Deepak Giri",
+        "UML": "Ghanashyam Pandey",
+        "NCP": "Dhan Bahadur Maski",
+        "RSP": "Kamal Subedi",
+        "RPP": "Damodar Bhandari",
+        "PSP-N": "Shobha Dangi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Banke 1",
+        "Congress": "Narayan Prasad Paudel",
+        "UML": "Surya Prasad Dhakal",
+        "NCP": "Narendra Pandey",
+        "RSP": "Suresh Chaudhary",
+        "RPP": "Pradeep Kumar Shah",
+        "PSP-N": "Rajendra Kumar Bishwokarma",
+        "Others": "Krishna K.C. (PLP)"
+      },
+      {
+        "Constituency": "Banke 2",
+        "Congress": "Sudhanshu Koirala",
+        "UML": "Mohammad Ishtiyaq Rayi",
+        "NCP": "Dipendra Bista",
+        "RSP": "Bibek Shrestha",
+        "RPP": "Rishiraj Devkota",
+        "PSP-N": "Mohammad Kamaruddin Rayi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Banke 3",
+        "Congress": "Amar Singh Pun",
+        "UML": "Dal Bahadur Sunar",
+        "NCP": "Dipak Gauri Magar",
+        "RSP": "Khagendra Sunar",
+        "RPP": "Tarak Singh Tharu",
+        "PSP-N": "Suryalal Yadav",
+        "Others": "Dhrubaraj Tharu (NUPN)"
+      },
+      {
+        "Constituency": "Bardiya 1",
+        "Congress": "Sanjay Kumar Gautam",
+        "UML": "Shalikram Adhikari",
+        "NCP": "Bishnu Prasad Tharu",
+        "RSP": "Thakur Singh Tharu",
+        "RPP": "Bir Bahadur Kami",
+        "PSP-N": "Manoj Yadav",
+        "Others": "Abdul Khan (NUPN)"
+      },
+      {
+        "Constituency": "Bardiya 2",
+        "Congress": "Kishor Shingh Rathore",
+        "UML": "Bimala B.K.",
+        "NCP": "Suresh Pantha",
+        "RSP": "Shreedhar Pokharel",
+        "RPP": "Sushil Chaudhary",
+        "PSP-N": "Anirudhya Gupta",
+        "Others": "Khushiram Tharu (NUPN) Dharma Bahadur Chaudhary (UPN)"
+      }
+    ],
+    "Karnali Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Salyan 1",
+        "Congress": "Keshav Bahadur Bista",
+        "UML": "Gulab Jung Shah",
+        "NCP": "Ramesh Kumar Malla",
+        "RSP": "Lalit Kumar Chand",
+        "RPP": "Anisha Nepali",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dolpa 1",
+        "Congress": "Karna Bahadur Budha",
+        "UML": "Langka Bahadur Rokaya",
+        "NCP": "Dhan Bahadur Buda",
+        "RSP": "Devsingh Aidee",
+        "RPP": "Hariprasad Dangi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Mugu 1",
+        "Congress": "Khadga Shahi",
+        "UML": "Purna Bahadur Rokaya",
+        "NCP": "Chandra Bahadur Shahi",
+        "RSP": "Rajendra Bahadur Shahi",
+        "RPP": "Bal Bahadur Malla",
+        "Others": ""
+      },
+      {
+        "Constituency": "Jumla 1",
+        "Congress": "Dip Bahadur Shahi",
+        "UML": "Shantilal Mahat",
+        "NCP": "Naresh Bhandari",
+        "RSP": "Binita Kathayat",
+        "RPP": "Gyanendra Shahi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kalikot 1",
+        "Congress": "Harsha Bahadur Bam",
+        "UML": "Nagendra Shahi",
+        "NCP": "Mahendra Bahadur Shahi",
+        "RSP": "Prakash Neupane",
+        "RPP": "Surya Bahdur Shah",
+        "Others": "Khadga Bahadur Bishwakarma (Maoist) Bhupendra Jung Shah (Ind)"
+      },
+      {
+        "Constituency": "Humla 1",
+        "Congress": "Jaypati Rokaya",
+        "UML": "Dal Phadera",
+        "NCP": "Dipendra Rokaya",
+        "RSP": "Tashi Lahajom",
+        "RPP": "Chhakka Budha",
+        "Others": "Jatil Karki (PLP)"
+      },
+      {
+        "Constituency": "Jajarkot 1",
+        "Congress": "Khadak Bahadur Buda",
+        "UML": "Dambar Bahadur Singh",
+        "NCP": "Shakti Bahadur Basnet",
+        "RSP": "Raghab Karki",
+        "RPP": "Krishna Bahadur Shah",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dailekh 1",
+        "Congress": "Basana Thapa",
+        "UML": "Rabindraraj Sharma",
+        "NCP": "Ambar Bahadur Thapa",
+        "RSP": "Nanda Kishor Basnet",
+        "RPP": "Rana Bahadur Singh",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dailekh 2",
+        "Congress": "Dikpal Kumar Shahi",
+        "UML": "Laxmi Prasad Pokharel",
+        "NCP": "Yogendra Bahadur Shahi",
+        "RSP": "Bakhat Bahadur Shahi",
+        "RPP": "Babita Shahi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Surkhet 1",
+        "Congress": "Bishnu Bahadur Khadka",
+        "UML": "Dhurba Kumar Shahi",
+        "NCP": "Jeet Bahadur Rana",
+        "RSP": "Tek Bahadur Singh Thakuri",
+        "RPP": "Rabikiran Hamal",
+        "Others": "Thammar Bahadur Bista (UNP)"
+      },
+      {
+        "Constituency": "Surkhet 2",
+        "Congress": "Narayan Koirala",
+        "UML": "Kulmani Devkota",
+        "NCP": "Jhak Bahadur Malla",
+        "RSP": "Ramesh Sapkota",
+        "RPP": "Kabiram Puri",
+        "Others": ""
+      },
+      {
+        "Constituency": "Western Rukum 1",
+        "Congress": "Raju K.C.",
+        "UML": "Nandaram Devkota",
+        "NCP": "Gopal Sharma",
+        "RSP": "Man Bahadur Shahi",
+        "RPP": "Gopal Khadka",
+        "Others": "Janardan Sharma (PLP)"
+      }
+    ],
+    "Sudurpashchim Province": [
+      {
+        "Constituency": "Constituency",
+        "Congress": "",
+        "UML": "",
+        "NCP": "",
+        "RSP": "",
+        "RPP": "",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bajura 1",
+        "Congress": "Janak Raj Giri",
+        "UML": "Lal Bahadur Thapa",
+        "NCP": "Prakash Bahadur Shah",
+        "RSP": "Hemraj Thapa",
+        "RPP": "Keshar Bahadur Shahi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Achham 1",
+        "Congress": "Bharat Kumar Swar",
+        "UML": "Jhapat Bahadur Bohara",
+        "NCP": "Bhim Bahadur Rawal",
+        "RSP": "Om Prakash Rawal",
+        "RPP": "Lokendra Bahadur Shah",
+        "Others": ""
+      },
+      {
+        "Constituency": "Achham 2",
+        "Congress": "Pushpa Bahadur Shah",
+        "UML": "Yagya Bahadur Bogati",
+        "NCP": "Bal Bahadur Kunwar",
+        "RSP": "Bhupadev Shah",
+        "RPP": "Meen Bahadur Shahi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Bajhang 1",
+        "Congress": "Prakash Rasaili",
+        "UML": "Ain Bahadur Mahara",
+        "NCP": "Meen Bahadur Kunwar",
+        "RSP": "Shailendra Kumar Singh",
+        "RPP": "Bishwa Prakash Jethara",
+        "Others": ""
+      },
+      {
+        "Constituency": "Doti 1",
+        "Congress": "Bharat Bahadur Khadka",
+        "UML": "Deepak Dhami",
+        "NCP": "Trilochan Bhatta",
+        "RSP": "Narendra Bahadur Khadka",
+        "RPP": "Khadga Prasad Agrawal",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kailali 1",
+        "Congress": "Janakraj Chaudhary",
+        "UML": "Dwarika Prasad Neupane",
+        "NCP": "Ramlal Dagaura Tharu",
+        "RSP": "Komal Gyawali",
+        "RPP": "Lokendra Kunwar",
+        "Others": "Janak Shah (PLP)"
+      },
+      {
+        "Constituency": "Kailali 2",
+        "Congress": "Bijay Bahadur Swar",
+        "UML": "Surya Bahadur Thapa",
+        "NCP": "Nanda Bahadur Saud",
+        "RSP": "KP Khanal",
+        "RPP": "Bharat Singh B.C.",
+        "Others": "Patiram Chaudhary (NUPN)"
+      },
+      {
+        "Constituency": "Kailali 3",
+        "Congress": "Bhim Baduwal",
+        "UML": "Gaurishankar Chaudhary",
+        "NCP": "Beerman Chuadhary",
+        "RSP": "Jagat Prasad Joshi",
+        "RPP": "Birendra Bam",
+        "Others": "Bikram Chaudhary (NUPN)"
+      },
+      {
+        "Constituency": "Kailali 4",
+        "Congress": "Gorakh Bahadur Bista",
+        "UML": "Lekhraj Bhatta",
+        "NCP": "Hariram Chaudhary",
+        "RSP": "Khemraj Koirala",
+        "RPP": "Kamal Bam Rajbaar",
+        "Others": "Dhan Bahadur Sunar (NUPN)"
+      },
+      {
+        "Constituency": "Kailali 5",
+        "Congress": "Nar Narayan Shah",
+        "UML": "Yagyaraj Dhungana",
+        "NCP": "Prem Bahadur Ale",
+        "RSP": "Ananda Chand",
+        "RPP": "Roshan Shahi",
+        "Others": "Jagannath Chaudhary (NUPN)"
+      },
+      {
+        "Constituency": "Darchula 1",
+        "Congress": "Dharmananda Joshi",
+        "UML": "Ganesh Singh Thagunna",
+        "NCP": "Laxman Dutta Joshi",
+        "RSP": "Rajesh Singh Samant",
+        "RPP": "Rajendra Bahadur Chand",
+        "Others": ""
+      },
+      {
+        "Constituency": "Baitadi 1",
+        "Congress": "Chatur Bahadur Chand",
+        "UML": "Damodar Bhandari",
+        "NCP": "Parmananda Bhatta",
+        "RSP": "Harimohan Bhandari",
+        "RPP": "Bhupen Bahadur Chand",
+        "Others": ""
+      },
+      {
+        "Constituency": "Dadeldhura 1",
+        "Congress": "Nain Singh Mahar",
+        "UML": "Chakra Prasad Snehi",
+        "NCP": "Mansingh Maal",
+        "RSP": "Tara Joshi",
+        "RPP": "Gobinda Khadayat",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kanchanpur 1",
+        "Congress": "Gopi Upadhyaya",
+        "UML": "Tara Lama Tamang",
+        "NCP": "Bina Magar",
+        "RSP": "Janak Singh Dhami",
+        "RPP": "Dilli Bahadur Shahi",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kanchanpur 2",
+        "Congress": "Narayan Prakash Saud",
+        "UML": "Bachan Bahadur Singh",
+        "NCP": "Madhav Pant",
+        "RSP": "Deepak Bohara",
+        "RPP": "Teertharaj Chataut",
+        "Others": ""
+      },
+      {
+        "Constituency": "Kanchanpur 3",
+        "Congress": "Hari Bohara",
+        "UML": "Deepak Prakash Bhatta",
+        "NCP": "Maan Bahadur Sunar",
+        "RSP": "Gyanendra Mahatara",
+        "RPP": "Purna Bahadur Chand",
+        "Others": ""
+      },
+      {
+        "Outgoing MP": "Krishna Kumar Shrestha",
+        "2022 party": "Unified Socialist",
+        "2022 constituency": "Bara 4",
+        "2026 party": "CPN (UML)",
+        "2026 constituency": "Bara 4"
+      },
+      {
+        "Outgoing MP": "Pradeep Yadav",
+        "2022 party": "PSP-Nepal",
+        "2022 constituency": "Parsa 1",
+        "2026 party": "CPN (UML)",
+        "2026 constituency": "Parsa 1"
+      },
+      {
+        "Outgoing MP": "Birendra Prasad Mahato",
+        "2022 party": "PSP-Nepal",
+        "2022 constituency": "Siraha 4",
+        "2026 party": "Janamat",
+        "2026 constituency": "Siraha 4"
+      },
+      {
+        "Outgoing MP": "Abdul Khan",
+        "2022 party": "Janamat",
+        "2022 constituency": "Party list",
+        "2026 party": "Nagrik Unmukti",
+        "2026 constituency": "Bardiya 1"
+      },
+      {
+        "Outgoing MP": "Kiran Kumar Sah",
+        "2022 party": "Independent",
+        "2022 constituency": "Rautahat 2",
+        "2026 party": "NCP",
+        "2026 constituency": "Rautahat 2"
+      },
+      {
+        "Outgoing MP": "Janardan Sharma",
+        "2022 party": "Maoist Centre",
+        "2022 constituency": "Western Rukum 1",
+        "2026 party": "Pragatisheel Loktantrik",
+        "2026 constituency": "Western Rukum 1"
+      },
+      {
+        "Outgoing MP": "Amresh Kumar Singh",
+        "2022 party": "Independent",
+        "2022 constituency": "Sarlahi 4",
+        "2026 party": "RSP",
+        "2026 constituency": "Sarlahi 4"
+      },
+      {
+        "Outgoing MP": "Yogendra Mandal",
+        "2022 party": "Independent",
+        "2022 constituency": "Morang 5",
+        "2026 party": "Urjasheel",
+        "2026 constituency": "Morang 5"
+      }
+    ]
+  }
 }
