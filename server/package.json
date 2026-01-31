@@ -1,0 +1,14 @@
+{
+  "name": "election-votes-server",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "dev": "node index.mjs"
+  }
+}

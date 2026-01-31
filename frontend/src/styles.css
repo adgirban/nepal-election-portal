@@ -70,7 +70,7 @@ body {
     overflow: hidden;
 }
 
-}
+
 
 /* Leaflet should fill the remaining space */
 .leaflet-container {
@@ -93,7 +93,7 @@ body {
 }
 
 /* Mobile popup becomes bottom sheet */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .popup {
     top: auto;
     right: 0;
@@ -121,8 +121,8 @@ body {
 }
 
 .hr {
-  border-top: 1px solid #999;
-  margin: 10px 0;
+  /* border-top: 1px solid #999; */
+    margin: 25px 0;
 }
 
 /* Buttons */
@@ -133,6 +133,8 @@ body {
   padding: 6px 10px;
   cursor: pointer;
   font-family: inherit;
+  position: absolute;
+    right: 12px;
 }
 .btn:active {
   transform: translateY(1px);
@@ -187,7 +189,7 @@ body {
 }
 
 /* Mobile: stack right block under left block */
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   :root {
     --nav-h: 92px;
     /* taller navbar on small screens */
@@ -210,6 +212,9 @@ body {
   .navbar__meta .pill {
     font-size: 11px;
   }
+.popup {
+  font-size: 12px;
+}
 }
 
 .pill--muted {
@@ -242,8 +247,29 @@ body {
     "Liberation Mono", "Courier New", monospace;
 }
 
-/* Keep leaflet controls visible */
-.leaflet-top,
-.leaflet-bottom {
-  z-index: 400;
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  /* below navbar, above map */
+  background: transparent;
+}
+
+/* Kill the click-focus rectangle Leaflet/SVG can get */
+.leaflet-container:focus,
+.leaflet-container *:focus {
+  outline: none !important;
+}
+
+/* Specifically target Leaflet SVG + interactive paths */
+.leaflet-overlay-pane svg:focus,
+.leaflet-overlay-pane path:focus,
+.leaflet-interactive:focus {
+  outline: none !important;
+}
+
+/* Some browsers draw focus ring via box-shadow */
+.leaflet-overlay-pane svg:focus,
+.leaflet-interactive:focus {
+  box-shadow: none !important;
 }

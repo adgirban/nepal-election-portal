@@ -5,6 +5,8 @@ import { normalizeDistrictName } from "./utils/normalizeDistrictName";
 import partySymbolsData from "./data/partySymbols.json";
 import NavBar from "./components/NavBar";
 import electionInfoData from "./data/electionInfo.json";
+import { useLiveVotes } from "./hooks/useLiveVotes";
+
 
 type Row = Record<string, any>;
 
@@ -79,10 +81,15 @@ const DISTRICT_ALIAS: Record<string, string> = {
 
   // Keep as-is but included for clarity
   Nawalpur: "Nawalpur",
+  Terhathum: "Tehrathum",
+  Kapilbastu: "Kapilvastu",
 };
 
 export default function App() {
   const data = candidatesData as CandidatesJSON;
+  const liveVotes = useLiveVotes();
+  const votesReady = !!liveVotes && Object.keys(liveVotes.votes || {}).length > 0;
+
 
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
 
@@ -170,12 +177,28 @@ export default function App() {
         />
 
         {selectedDistrict && (
-          <div className="popup">
-            <h2 style={{ marginBottom: 6 }}>{selectedDistrict}</h2>
+          <div
+            className="popup-overlay"
+            onClick={() => setSelectedDistrict(null)}
+          >
+            <div className="popup" onClick={(e) => e.stopPropagation()}>
+              <button className="btn" onClick={() => setSelectedDistrict(null)}>
+                X
+              </button>
+              <h2 style={{ marginBottom: 6 }}>{selectedDistrict}<span className="small"> — {matchedRows[0]?.Province}</span></h2>
 
             <div className="small">
               Source: Wikipedia • Updated{" "}
               {new Date(data.fetchedAt).toLocaleString()}
+            </div>
+
+            <div className="small">
+              Live votes:{" "}
+              <b>
+                {votesReady
+                  ? `connected • last update ${new Date(liveVotes!.fetchedAt).toLocaleString()}`
+                  : "not started / no ECN data yet"}
+              </b>
             </div>
 
             <div className="hr" />
@@ -202,8 +225,7 @@ export default function App() {
                     return (
                       <div key={i} style={{ marginBottom: 14 }}>
                         <h3 style={{ marginBottom: 8 }}>
-                      {row.Constituency}
-                      <span className="small"> — {row.Province}</span>
+                          {row.Constituency}
                     </h3>
 
                     {parties.map((party) => (
@@ -211,7 +233,11 @@ export default function App() {
                         key={party}
                         party={party}
                         name={String(row[party] ?? "")}
+                        constituency={String(row.Constituency ?? "")}
+                        votesMap={liveVotes?.votes ?? {}}
+                        votesReady={votesReady}
                       />
+
                     ))}
 
                         <div className="hr" />
@@ -221,9 +247,7 @@ export default function App() {
             )}
 
 
-            <button className="btn" onClick={() => setSelectedDistrict(null)}>
-              Close
-            </button>
+            </div>
           </div>
         )}
       </div>
@@ -231,52 +255,99 @@ export default function App() {
   );
 }
 
-function CandidateRow({ party, name }: { party: string; name: string; }) {
+function CandidateRow({
+  party,
+  name,
+  constituency,
+  votesMap,
+  votesReady,
+}: {
+  party: string;
+  name: string;
+  constituency: string;
+  votesMap: Record<string, number>;
+  votesReady: boolean;
+}) {
   const v = sanitizeValue(name);
   if (!v) return null;
 
   const symbolPath = getPartySymbolPath(party);
+  const candidates = splitCandidateNames(v);
+
+  const districtRaw = extractDistrictFromConstituency(constituency);
+  const district = normalizeDistrictName(districtRaw);
+  const no = constituencyNumber(constituency);
+
+  const voteKey = `${district}-${no}|${party}`;
+  const hasKey = Object.prototype.hasOwnProperty.call(votesMap, voteKey);
+  const votes = hasKey ? votesMap[voteKey] : 0;
+
+  const display = votesReady ? (hasKey ? votes.toLocaleString() : "—") : "—";
 
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: 12,
-        marginBottom: 4,
-        alignItems: "center",
-      }}
-    >
-      <div style={{ width: 90, fontWeight: 700 }}>{party}</div>
+    <div style={{ marginBottom: 6 }}>
+      {candidates.map((cand, idx) => (
+        <div
+          key={`${party}-${idx}`}
+          style={{
+            display: "flex",
+            gap: 5,
+            alignItems: "center",
+            borderBottom: "1px solid #979595",
+            padding: "3px 0",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ width: 80, fontWeight: 700 }}>
+            {idx === 0 ? party : ""}
+          </div>
 
-      <div style={{ flex: 1, alignItems: "baseline" }}>{v}</div>
+          <div style={{ flex: 1, lineHeight: "20px" }}>{cand}</div>
 
-      {/* Symbol column (shifted left, space reserved for votes) */}
-      <div
-        style={{
-          width: 120,
-          textAlign: "left",
-          paddingLeft: 16,
-          paddingRight: 40, // ← future vote count space
-          boxSizing: "border-box",
-        }}
-      >
-        {symbolPath ? (
-          <img
-            src={symbolPath}
-            alt={`${party} symbol`}
-            style={{ height: 26, width: "auto", objectFit: "contain" }}
-            loading="lazy"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
+          <div
+            style={{
+              width: 50,
+              textAlign: "left",
+              paddingLeft: 0,
+              paddingRight: 10,
+              boxSizing: "border-box",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              minHeight: 26,
             }}
-          />
-        ) : (
-          <span className="small">—</span>
-        )}
-      </div>
+          >
+            {symbolPath ? (
+              <img
+                src={symbolPath}
+                alt={`${party} symbol`}
+                style={{ height: 26, width: "auto", objectFit: "contain" }}
+                loading="lazy"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
+            ) : (
+              <span className="small">—</span>
+            )}
+          </div>
+
+          <div
+            style={{
+              width: 70,
+              textAlign: "right",
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
+            {display}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
+
+
 
 
 
@@ -339,3 +410,51 @@ function cleanRowValues(row: Row): Row {
   }
   return out;
 }
+
+function splitCandidateNames(value: string): string[] {
+  const s0 = String(value || "").trim();
+  if (!s0) return [];
+
+  const s = s0.replace(/\s+/g, " ").trim();
+
+  if (s.includes("\n")) {
+    return s
+      .split("\n")
+      .map((x) => x.trim())
+      .filter(Boolean);
+  }
+
+  if (s.includes("<br")) {
+    return s
+      .replace(/<br\s*\/?>/gi, "\n")
+      .split("\n")
+      .map((x) => x.trim())
+      .filter(Boolean);
+  }
+
+  const parenSegments = s.match(/[^()]+?\([^)]*\)/g);
+  if (parenSegments && parenSegments.length >= 2) {
+    return parenSegments.map((x) => x.trim()).filter(Boolean);
+  }
+
+  const separators = [" • ", " ; ", " | "];
+  for (const sep of separators) {
+    if (s.includes(sep)) {
+      return s
+        .split(sep)
+        .map((x) => x.trim())
+        .filter(Boolean);
+    }
+  }
+
+  if (s.includes(",") && /,\s*[A-Z]/.test(s)) {
+    return s
+      .split(",")
+      .map((x) => x.trim())
+      .filter(Boolean);
+  }
+
+  return [s];
+}
+
+

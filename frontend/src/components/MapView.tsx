@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 import { normalizeDistrictName } from "../utils/normalizeDistrictName";
@@ -14,7 +14,6 @@ type Props = {
 
 export default function MapView(props: Props) {
   const [fc, setFc] = useState<FeatureCollection<Geometry> | null>(null);
-  const loggedFirst = useRef(false);
 
   useEffect(() => {
     fetch(props.geoJsonUrl)
@@ -42,9 +41,10 @@ export default function MapView(props: Props) {
 
   return (
     <MapContainer
+      keyboard={false}
       style={{ height: "100vh", width: "100vw", background: "#f4eeee" }}
-      center={[28.2, 84.0]}
-      zoom={7}
+      center={[28.4, 84.0]}
+      zoom={7.5}
       minZoom={6}
       maxZoom={9}
       zoomSnap={0.25}
@@ -61,27 +61,27 @@ export default function MapView(props: Props) {
           const raw = getDistrictName(feature as any);
           const name = normalizeDistrictName(raw);
 
-          // Create tooltip instance (NOT bound)
-          const tooltip = L.tooltip({
+          // Bind tooltip (not permanent)
+          (layer as any).bindTooltip(name, {
             sticky: true,
             direction: "top",
             opacity: 0.95,
             className: "district-tooltip",
-          }).setContent(name);
+          });
 
-          layer.on("mouseover", (e) => {
-            layer.setStyle({ weight: 2.2 });
-            tooltip.setLatLng(e.latlng);
-            layer._map?.openTooltip(tooltip);
+          layer.on("mouseover", () => {
+            (layer as L.Path).setStyle({ weight: 2.2 });
+            (layer as any).openTooltip();
           });
 
           layer.on("mouseout", () => {
-            layer.setStyle({ weight: 1.2 });
-            layer._map?.closeTooltip(tooltip);
+            (layer as L.Path).setStyle({ weight: 1.2 });
+            (layer as any).closeTooltip();
           });
 
           layer.on("click", () => {
-            // ❌ no tooltip action here
+            // prevent tooltip staying / flashing on click
+            (layer as any).closeTooltip();
             props.onDistrictClick(name);
           });
         }}
